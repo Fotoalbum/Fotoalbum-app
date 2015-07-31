@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Maurice Mullens" />
+
+        <title>Enjoy</title>
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+
+        <script type="text/javascript" src="js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/zip/zip.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="nav navbar-fixed-top navbar-inverse navheader">
+            <div id="btnHome" class="col-xs-1 btnHome"><span class="glyphicon glyphicon-home"></span></div>
+            <div id="brand" class="col-xs-10">Betaling afgerond</div>
+            <div class="col-xs-1 btnInfo"><span class="glyphicon glyphicon-info-sign"></span></div>
+        </div>
+
+        <div id="content">
+
+            <div id="page-content">
+
+                <div class="paymentform" role="form">
+
+                    <div class="row orderform_maintitle">
+                        Je betaling is ontvangen. We gaan nu je fotoalbum uploaden.
+                    </div>
+
+                    <div class="row orderform_subtitle">
+                        Dit kan even duren. Sluit de app niet af voordat dit klaar is.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button id="btnBackToOrder" class="btn btn-default paymentform_backbutton">Terug</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+        <script type="text/javascript" src="js/libs/shared.js"></script>
+        <script type="text/javascript" src="js/libs/calculations.js"></script>
+        <script type="text/javascript" src="js/libs/load-image.all.min.js"></script>
+        <script type="text/javascript" src="js/libs/paymentdone.js"></script>
+
+    </body>
+</html>
