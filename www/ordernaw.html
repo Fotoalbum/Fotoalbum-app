@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Maurice Mullens" />
+
+        <title>Enjoy</title>
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+
+        <script type="text/javascript" src="js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/zip/zip.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="nav navbar-fixed-top navbar-inverse navheader">
+            <div id="btnHome" class="col-xs-2 btnHome"><span class="glyphicon glyphicon-home"></span></div>
+            <div id="brand" class="col-xs-8">Winkelwagen</div>
+            <div class="col-xs-2 btnInfo"><span class="glyphicon glyphicon-info-sign"></span></div>
+        </div>
+
+        <div id="content">
+
+            <div id="page-content">
+
+                <div class="nawform" role="form">
+
+                    <div class="row orderform_maintitle">
+                        Gegevens
+                    </div>
+
+                    <div class="row nawform_subtitle">
+                        Jouw gegevens
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label class="naw_label">Naam</label>
+                        </div>
+                        <div class="col-xs-10">
+                            <label id="name" class="naw_value_label"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label class="naw_label">E-mail</label>
+                        </div>
+                        <div class="col-xs-10">
+                            <label id="email" class="naw_value_label"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label id="btnSwitchUser" class="linkbtn">Andere gebruiker kiezen</label>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="row nawform_subtitle">
+                        Facturatie en afleveradres
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input id="adress" type="text" class="form-control orderform_input" placeholder="Straat" />
+                        </div>
+                        <div class="col-xs-2">
+                            <input id="housenr" type="text" class="form-control orderform_input" placeholder="Nr" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <input id="zipcode" type="text" class="form-control orderform_input" placeholder="Postcode" />
+                        </div>
+                        <div class="col-xs-8">
+                            <input id="city" type="text" class="form-control orderform_input" placeholder="Stad" />
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input id="country" type="text" class="form-control orderform_input" placeholder="Land" value="Nederland" />
+                        </div>
+                    </div>
+
+                    <div class="row orderform_sameadress">
+                        <label>
+                            <input id="invoicesameadress" type="checkbox" checked>
+                            Factuuradres hetzelfde als afleveradres
+                        </label>
+                    </div>
+
+                    <div id="deliveryadress" class="hidden">
+
+                        <div class="row orderform_subtitle">
+                            Afleveradres
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input id="delivery_name" type="text" class="form-control orderform_input" placeholder="Naam van de ontvanger" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-10">
+                                <input id="delivery_adress" type="text" class="form-control orderform_input" placeholder="Straat" />
+                            </div>
+                            <div class="col-xs-2">
+                                <input id="delivery_housenr" type="text" class="form-control orderform_input" placeholder="Nr" />
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <input id="delivery_zipcode" type="text" class="form-control orderform_input" placeholder="Postcode" />
+                            </div>
+                            <div class="col-xs-8">
+                                <input id="delivery_city" type="text" class="form-control orderform_input" placeholder="Stad" />
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input id="delivery_country" type="text" class="form-control orderform_input" placeholder="Land" />
+                            </div>
+                        </div>
+
+                    </div>
+                    -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <button id="btnGoPayment" class="btn btn-default orderform_button">Betalen</button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+        <div id="myloader">
+            <div id="loadermsg">Bezig met laden...</div>
+        </div>
+
+        <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+        <script type="text/javascript" src="js/libs/shared.js"></script>
+        <script type="text/javascript" src="js/libs/calculations.js"></script>
+        <script type="text/javascript" src="js/libs/load-image.all.min.js"></script>
+        <script type="text/javascript" src="js/libs/ordernaw.js"></script>
+
+    </body>
+</html>

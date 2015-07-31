@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="multi_app_name">MultiImageChooser</string>
+    <string name="free_version_label">Gratis versie - nog %d dagen te gaan</string>
+    <string name="error_database">Fout in de foto database. Neem kontakt op met de helpdesk</string>
+    <string name="requesting_thumbnails">Fotos worden ingelezen, momentje ajb</string>
+    <string name="discard">Annuleren</string>
+    <string name="done">Klaar</string>
+</resources>

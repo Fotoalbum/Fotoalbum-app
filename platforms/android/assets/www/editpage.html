@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="Maurice Mullens" />
+
+        <title>Enjoy</title>
+
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.guillotine.css" />
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css" />
+
+        <script type="text/javascript" src="js/jquery/jquery.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+
+    </head>
+
+    <body>
+
+        <div class="nav navbar-fixed-top navbar-inverse navheader">
+            <div class="row">
+                <div id="btnBackToOrder" class="col-xs-1 btnBack"><span class="glyphicon glyphicon-chevron-left"></span><div class="btnLabel">Volgorde</div></div>
+                <div id="brand" class="col-xs-10">Voorbeeld</div>
+                <div id="btnOrder" class="col-xs-1 btnOrder"><span class="glyphicon glyphicon-shopping-cart"></span><div class="btnLabel">Bestellen</div></div>
+            </div>
+        </div>
+
+        <div id="pagebypage"></div>
+
+        <div id="pagenumbercontainer">
+            <div id="pagenumberlabels">
+                <label id="pagenumberleft"></label>
+                <label id="pagenumberright" class="right"></label>
+            </div>
+        </div>
+
+        <button id="btnPreviousPage" class="btn -link"><span class="glyphicon glyphicon-chevron-left"></span></button>
+        <button id="btnNextPage" class="btn -link"><span class="glyphicon glyphicon-chevron-right"></span></button>
+
+        <div id="calcdiv" class="hide"></div>
+
+        <div class="footer">
+            <div class="row">
+                <div id="btnRotate" class="col-xs-1 col-xs-offset-5 btnEdit"><span class="glyphicon glyphicon-repeat"></span></div>
+                <!--
+                <div id="btnZoomOut" class="col-xs-1 btnEdit"><span class="glyphicon glyphicon-zoom-out"></span></div>
+                <div id="btnZoomIn" class="col-xs-1 btnEdit"><span class="glyphicon glyphicon-zoom-in"></span></div>
+                -->
+                <div id="btnReset" class="col-xs-1 btnEdit"><span class="glyphicon glyphicon-resize-full"></span></div>
+            </div>
+        </div>
+
+        <div id="myloader">
+            <div id="loadermsg">Bezig met laden...</div>
+        </div>
+
+        <script type="text/javascript" src="js/jquery/jquery.guillotine.min.js"></script>
+        <script type="text/javascript" src="js/libs/shared.js"></script>
+        <script type="text/javascript" src="js/libs/calculations.js"></script>
+        <script type="text/javascript" src="js/libs/editpage.js"></script>
+
+    </body>
+</html>
