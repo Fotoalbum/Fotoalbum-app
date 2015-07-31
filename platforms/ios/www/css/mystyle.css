@@ -1,0 +1,1015 @@
+/* adjust body when menu is open */
+html,body {
+    height: 100%;
+    font-family: "Open Sans Condensed", Georgia, Serif;
+    font-size: 1.1em;
+}
+
+.container {
+    text-align: center;
+}
+
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px !important
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+.btnHome {
+    font-size: 18pt;
+    text-align: center;
+}
+
+.btnInfo {
+    font-size: 18pt;
+    text-align: center;
+}
+
+.btnBack {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.btnNext {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.btnOrder {
+    font-size: 12pt;
+    text-align: center;
+}
+
+.btnEdit {
+    font-size: 14pt;
+    color: #FFFFFF;
+    padding: 5px;
+}
+
+.btnPreview {
+    font-size: 12pt;
+    text-align: center;
+}
+
+#brand {
+    font-size: 18pt;
+    padding-top: 3px;
+    text-align: center;
+}
+
+.buttonmenu {
+    padding-top: 30px;
+}
+
+#btnDelete.disabled, #btnDelete[disabled] {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #333;
+}
+
+#order {
+    padding-top: 4px;
+    padding-right: 4px;
+}
+
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    padding-top: 40px;
+}
+
+.navheader {
+    position: fixed;
+    height: 40px;
+    background-color: #1483CC;
+    padding-top: 1px;
+    color: #FFF; 
+}
+
+.footer {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    vertical-align: middle;
+    background-color: #1483CC;
+}
+
+.footerbutton {
+    padding-top: 5px;
+    font-size: 12pt;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.footerbutton p {
+    line-height: 1px;
+    font-size: 8pt;
+    text-align: center;
+}
+
+.alwaysactive {
+    height: 100%;
+    padding: 4px;
+    color: #1483CC;
+    border: 0px;
+    border-right: 1px solid #D2D2D2;
+}
+
+.alwaysactive p {
+    line-height: 1px;
+    font-size: 8pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.footerglyph {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#lstPages {
+    width: 100%;
+    background-color: #58595B;
+    padding-top: 55px;
+    padding-left: 5px;
+    padding-bottom: 65px;
+    float: left;
+    overflow-y: scroll;
+    list-style:none;
+}
+
+.thumbnail {
+    min-height: 100px;
+}
+
+.myalbums {
+    background-color: #FFFFFF;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.banner {
+    height: 0px;
+    background-image: url('../assets/start.png');
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-position: center;
+    background-size: 100% 0px;
+    overflow: hidden;
+}
+
+p {
+    margin-left: 0px;
+}
+
+.photoDiv {
+    overflow:hidden; 
+    background-color: #FFFFFF; 
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+    width: 0px;
+    height: 0px;
+    margin-top: 0px;
+    padding: 3px;
+}
+
+.front {
+    outline: 1px #FFF;
+    outline-style:inset;
+    outline-offset: -2px;
+}
+
+.pagelabel {
+    display: table-cell;
+    color: #FFF;
+    font-size: 0.5em;
+    font-weight: bold;
+    width: inherit;
+    height: inherit;
+    vertical-align: bottom;
+    text-align: center;
+    padding-bottom: 8px;
+
+}
+
+.insideofcover {
+    background-color: #64AADD !important;
+}
+
+.photoContainer {
+    float: left;
+    width: 0px;
+    height: 0px;
+}
+
+.placeholder {
+    float:left;
+    width: 0px;
+    height: 0px;
+}
+
+.floatLeft {
+    float:left;
+}
+
+.floatRight {
+    float:right;
+}
+
+.albumPageLabelLeft {
+    text-align: right;
+    font-size: 8pt;
+    padding-right: 8px;
+}
+
+.albumPageLabelRight {
+    text-align: left;
+    font-size: 8pt;
+    padding-left: 8px;
+}
+
+.dragImage {
+    margin: 0px;
+}
+
+.glyphicon {
+    margin-right: 0px;
+}
+
+.navigation .glyphicon {
+    margin-right: 0px;
+    margin-top: 4px;
+}
+
+.nav .glyphicon {
+    vertical-align: middle;
+}
+
+#btnAlbumEdit {
+    font-size: 18pt;
+    padding-top: 22px;
+}
+
+#btnAlbumDelete {
+    visibility: hidden; 
+    font-size: 24pt;
+    padding-top: 24px;
+    color: #FFFFFF;
+}
+
+#addPhoto {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+#addPhoto > span {
+    display: table-cell;
+    color: #FFFFFF; 
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2em;
+}
+
+/*
+Gemaakte albums van de gebruikter
+*/
+#lstAlbums {
+    display: block;
+    margin-top: 1px;
+    border-top: 1px #EAEAEA solid;
+    margin-bottom: 0px;
+}
+
+.myAlbumRow {
+    margin-bottom: 5px;
+    border-bottom: 1px #EAEAEA solid;
+}
+
+.myAlbumImage {
+    float: left;
+    width: 100px;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #EAEAEA;
+    background-clip: initial;
+    margin: 5px;
+}
+
+.myAlbumCol {
+    text-align: left;
+}
+
+.myAlbumInfo {
+    margin-left: 10px;
+    vertical-align: top;
+}
+
+.myAlbumCaption {
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.myAlbumSub {
+    font-size: 10pt;
+}
+
+.myAlbumPrice {
+    text-align: left;
+    font-size: 12pt;
+    font-weight: bold;
+    color: #64AADD;
+}
+
+.myAlbumSelector > span {
+    position: absolute;
+    padding-top: 30px;
+    color: #D2D2D2;
+}
+
+.moreAlbums {
+    color: #1483CC;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/*
+Orders van de gebruikter
+*/
+#lstOrders {
+    display: block;
+    margin-top: 1px;
+    border-top: 1px #EAEAEA solid;
+}
+
+.myOrderRow {
+    margin-bottom: 5px;
+    border-bottom: 1px #EAEAEA solid;
+}
+
+.myOrderImage {
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+    background-color: #EAEAEA;
+}
+
+.myOrderCol {
+    text-align: left;
+}
+
+.myOrderInfo {
+    margin-left: 10px;
+    margin-top: 4px;
+    line-height: 17px;
+}
+
+.myOrderCaption {
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.myOrderStatus {
+    color: #1483CC;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.myOrderSub {
+    font-size: 10pt;
+}
+
+.myOrderPrice {
+    text-align: left;
+    font-size: 10pt;
+}
+
+.myOrderSelector > span {
+    position: absolute;
+    padding-top: 30px;
+    color: #D2D2D2;
+}
+
+.moreOrders {
+    color: #1483CC;
+    font-weight: bold;
+    font-size: 10pt;
+    text-align: right;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/*
+Producten die je kan kiezen
+*/
+.myProductImage {
+    float: left;
+    max-width: 100px;
+    height: 100px;
+    background-color: #EAEAEA;
+    padding: 5px;
+    display: block;
+}
+
+.myProductRow {
+    border-bottom: 1px #EAEAEA solid;
+}
+
+.myProductCol {
+    display: block;
+    text-align: left;
+    line-height: 12pt;
+}
+
+.myProductInfo {
+    display: table-cell;
+    text-align: left;
+    padding-left: 5px;
+    padding-top: 10px;
+}
+
+.myProductCaption {
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.myProductSub {
+    font-size: 10pt;
+}
+
+.myProductPrice {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #64AADD;
+}
+
+.myProductSelector > span {
+    display: table-cell;
+    height: 80px;
+    color: #D2D2D2;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+#slide-menu {
+    margin-left: -250px;
+    left: 0px;
+    width: 250px;
+    background: #484848;
+    position: fixed;
+    height: 100%;
+    overflow-y: hidden;
+    z-index: 1000;
+    color: #fff;
+}
+
+.navigation {
+    position: absolute;
+    top: 35px;
+    width: 250px;
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+}
+.navigation li {
+    text-indent: 5px;
+    margin-left: -5px;
+    margin-right: -5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px #555555 solid;
+}
+
+.navigation li a {
+    color: #FFF;
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.navigation .active {
+    color: #fff;
+    background: #1483CC;
+    text-decoration: none;
+    border-bottom: 1px #D2D2D2 solid;
+    border-top: 1px #D2D2D2 solid;
+}
+.navigation li a:hover {
+    color: #fff;
+    background: #1483CC;
+    text-decoration: none;
+    margin-left: -5px;
+    margin-right: -5px;
+    text-indent: 15px;
+}
+.navigation li a:active, .navigation li a:focus {
+    text-decoration: none
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    visibility: hidden;
+    background-color: #1483CC;
+    text-align: center;
+    padding-top: 0px;
+}
+
+h1 {
+    font-size: 1em;
+    color: #FFFFFF;
+}
+
+#buttonGroup {
+    position: absolute;
+    float: bottom;
+    padding: 20px;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+.homebutton {
+    background-color: #1483CC;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: left;
+    min-width: 220px;
+    border: 2px #FFFFFF solid;
+    margin-top: 5px;
+}
+
+.homebutton span {
+    padding-right: 10px;
+}
+
+.btnLabel {
+    font-size: 11px;
+    float: bottom;
+    text-align: center;
+}
+
+#page-example {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #D2D2D2;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#btnPreviousPage {
+    position: relative;
+    background: #1483CC;
+    color: #FFFFFF;
+    width: 70px;
+    height: 70px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: solid 2px #FFFFFF;
+    left: -35px;
+    top: 100px;
+    z-index: 1000;
+    outline: none;
+}
+
+#btnPreviousPage span {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 22px;
+    margin-left: 25px;
+}
+
+#btnNextPage {
+    position: absolute;
+    background: #1483CC;
+    color: #FFFFFF;
+    width: 70px;
+    height: 70px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: solid 2px #FFFFFF;
+    right: -35px;
+    top: 100px;
+    z-index: 1000;
+    outline: none;
+}
+
+#btnNextPage span {
+    padding-top: 4px;
+    font-size: 22px;
+    text-align: center;
+    margin-left: -30px;
+}
+
+#btnRotate {
+    outline: none;
+}
+
+#pagenumbercontainer {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    height: 25px;
+}
+
+#pagenumberlabels {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    vertical-align: middle;
+    font-size: 10pt;
+    color: #58595B;
+}
+
+#pagenumberleft {
+    position: absolute;
+    left: 0px;
+}
+
+#pagenumberright {
+    position: absolute;
+    right: 0px;
+}
+
+.coverback {
+    background-color: #FFFFFF !important;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.coverback > img {
+    width: 20px;
+    height: 20px;
+}
+
+#reordercontent {
+    height: 100%;
+    background-color: #58595B;
+}
+
+#pagebypage {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 40px;
+    background-color: #D2D2D2;
+    float: left;
+}
+
+.pageholder {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #FFFFFF; 
+    width: 0px;
+    height: 0px;
+    border: none;
+    outline: none;
+}
+
+.pageholderLeft {
+    position: relative;
+    display: table-cell;
+    background-color: #FFFFFF; 
+    width: 0px;
+    height: 0px;
+    border: 2px #D2D2D2;
+    border-style: dashed;
+    outline: none;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.pageholderRight {
+    position: relative;
+    display: table-cell;
+    background-color: #FFFFFF; 
+    width: 0px;
+    height: 0px;
+    outline: 2px #FFFF00;
+    outline-style: solid;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.spread {
+    border: none;
+    overflow: visible;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.photopreview {
+    width: 0px;
+    height: 0px;
+}
+
+#coverbackLogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.imageReorder {
+    width: 100%;
+    height: 100%;
+}
+
+#myloader {
+    position: fixed;
+    display: table;
+    left: 0;
+    top: 0;
+    background-color: #1483CC;
+    width: 100%;
+    height: 100%;
+    font-size: 22pt;
+    z-index: 10000;
+}
+
+#loadermsg {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.orderform {
+    padding: 10px;
+}
+
+.orderform .row {
+    margin-bottom: 0px;
+}
+
+.orderform_maintitle {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.orderform_subtitle {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 10px !important;
+}
+
+.orderform_button {
+    background-color: #1483CC;
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: 20px;
+    width: 120px;
+    float: right;
+}
+
+.orderform_input {
+    border-radius: 0px;
+    margin-bottom: 4px;
+}
+
+.loginform_input {
+    border-radius: 0px;
+    margin-bottom: 4px;
+}
+
+.orderform_lnk {
+    color: #1483CC;
+    background: none;
+    border: none;
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    padding-bottom: 4px;
+}
+
+.orderform_sameadress label {
+    font-weight: normal;
+    font-size: 14px;
+    
+}
+
+.paymentform {
+  padding: 10px;
+}
+
+.paymentform .row {
+    margin-bottom: 10px;
+}
+
+.paymentform_button {
+    background-color: #1483CC;
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: 20px;
+    width: 120px;
+    float: right;
+}
+
+.paymentform_backbutton {
+    background-color: #1483CC;
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: 20px;
+    width: 120px;
+}
+
+.orderpagefooter {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    border: none;
+}
+
+.orderpagefooter .nav {
+    background-color: #58595B;
+    border: none;
+    font-size: 15px;
+    vertical-align: middle !important;
+    border-radius: 0;
+}
+
+.orderpagefooter .nav .active a {
+    background-color: #1483CC !important;
+    border: none;
+    border-radius: 0;
+    color: #FFF !important;
+}
+
+.orderpagetab {
+    color: #FFF;
+}
+
+.orderpagetab active {
+    color: #FFF000;
+}
+
+.registerform {
+    padding: 10px;
+}
+
+.registerform .row {
+    margin-bottom: 0px;
+}
+
+.registerform_input {
+    border-radius: 0px;
+    margin-bottom: 2px;
+    border: #D2D2D2 1px dashed;
+}
+
+.registerlabel {
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.register_checkbox {
+    margin-right: 4px !important;
+}
+
+.registermsg {
+    font-size: 10px;
+    color: #58595B;
+    vertical-align: middle !important;
+    padding-top: 4px;
+}
+
+.registerform_button {
+    background-color: #1483CC;
+    border: none;
+    border-radius: 0;
+    color: #FFF;
+    font-size: 20px;
+    width: 120px;
+    float: right;
+}
+
+.resendform {
+    padding: 10px;
+}
+
+.resendform .row {
+    margin-bottom: 0px;
+}
+
+.nawform {
+    padding: 10px;
+}
+
+.nawform .row {
+    margin-bottom: 0px;
+    overflow-y: auto;
+}
+
+.naw_label {
+    font-size: 14px;
+    color: #D2D2D2;
+}
+
+.naw_value_label {
+    font-size: 14px;
+    color: #58595B;
+}
+
+.nawform_subtitle {
+    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.linkbtn {
+    font-size: 14px;
+    color: #1483CC;
+    text-decoration: underline;
+}
+
+.myloader_info {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#myloader_msg {
+    font-size: 22px;
+    color: #FFF;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+#myloader_progress {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.progress-label {
+    font-size: 14px;
+    color: #FF0000;
+}
+
+#paymentcontent {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 22pt;
+    z-index: 40000;
+}
+
+.paymentsub {
+    width: 100%;
+    height: 500px;
+}
+
+/* portrait */
+@media screen and (orientation:portrait) {
+    /* portrait-specific styles */
+
+
+}
+
+/* landscape */
+@media screen and (orientation:landscape) {
+
+
+}
