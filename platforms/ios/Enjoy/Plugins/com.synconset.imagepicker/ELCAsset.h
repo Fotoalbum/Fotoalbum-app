@@ -15,7 +15,6 @@
 @optional
 - (void)assetSelected:(ELCAsset *)asset;
 - (BOOL)shouldSelectAsset:(ELCAsset *)asset;
-- (void)setNumPhotos:(ELCAsset *)asset;
 @end
 
 

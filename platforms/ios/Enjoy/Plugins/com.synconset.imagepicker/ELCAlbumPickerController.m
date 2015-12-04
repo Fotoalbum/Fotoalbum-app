@@ -9,9 +9,9 @@
 #import "ELCImagePickerController.h"
 #import "ELCAssetTablePicker.h"
 
-@interface ELCAlbumPickerController()
+@interface ELCAlbumPickerController ()
 
-@property(nonatomic, strong) ALAssetsLibrary *library;
+@property (nonatomic, strong) ALAssetsLibrary *library;
 
 @end
 
@@ -22,142 +22,142 @@
 #pragma mark -
 #pragma mark View lifecycle
 
-- (void) viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+	
+	[self.navigationItem setTitle:@"Loading..."];
 
-    [self.navigationItem setTitle : @"Laden..."];
-
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithTitle : @"Annuleren" style : UIBarButtonItemStyleBordered target : self.parent action : @selector(cancelImagePicker)];
-    [self.navigationItem setLeftBarButtonItem : cancelButton];
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parent action:@selector(cancelImagePicker)];
+	[self.navigationItem setRightBarButtonItem:cancelButton];
 
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-    self.assetGroups = tempArray;
-
+	self.assetGroups = tempArray;
+    
     ALAssetsLibrary *assetLibrary = [[ALAssetsLibrary alloc] init];
     self.library = assetLibrary;
 
     // Load Albums into assetGroups
-
-    dispatch_async(dispatch_get_main_queue(), ^ {
-        @autoreleasepool
-        {
-
-            // Group enumerator Block
-            void (^assetGroupEnumerator)(ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL * stop)
+    dispatch_async(dispatch_get_main_queue(), ^
+    {
+        @autoreleasepool {
+        
+        // Group enumerator Block
+            void (^assetGroupEnumerator)(ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL *stop) 
             {
                 if (group == nil) {
                     return;
                 }
-
+                
                 // added fix for camera albums order
-                NSString *sGroupPropertyName = (NSString *)[group valueForProperty : ALAssetsGroupPropertyName];
-                NSUInteger nType = [[group valueForProperty : ALAssetsGroupPropertyType] intValue];
-
-                if ([[sGroupPropertyName lowercaseString] isEqualToString : @"camera roll"] && nType == ALAssetsGroupSavedPhotos) {
-                    [self.assetGroups insertObject : group atIndex : 0];
-                } else {
-                    [self.assetGroups addObject : group];
+                NSString *sGroupPropertyName = (NSString *)[group valueForProperty:ALAssetsGroupPropertyName];
+                NSUInteger nType = [[group valueForProperty:ALAssetsGroupPropertyType] intValue];
+                
+                if ([[sGroupPropertyName lowercaseString] isEqualToString:@"camera roll"] && nType == ALAssetsGroupSavedPhotos) {
+                    [self.assetGroups insertObject:group atIndex:0];
+                }
+                else {
+                    [self.assetGroups addObject:group];
                 }
 
                 // Reload albums
-                [self performSelectorOnMainThread : @selector(reloadTableView) withObject : nil waitUntilDone : YES];
+                [self performSelectorOnMainThread:@selector(reloadTableView) withObject:nil waitUntilDone:YES];
             };
-
+            
             // Group Enumerator Failure Block
-            void (^assetGroupEnumberatorFailure)(NSError *) = ^(NSError * error)
-            {
-
-                UIAlertView * alert = [[UIAlertView alloc] initWithTitle : @"Error" message : [NSString stringWithFormat : @"Album Error: %@ - %@", [error localizedDescription], [error localizedRecoverySuggestion]] delegate : nil cancelButtonTitle : @"Ok" otherButtonTitles : nil];
+            void (^assetGroupEnumberatorFailure)(NSError *) = ^(NSError *error) {
+                
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Album Error: %@ - %@", [error localizedDescription], [error localizedRecoverySuggestion]] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
                 [alert show];
-
-                NSLog(@"A problem occured %@", [error description]);
-            };
-
+                
+                NSLog(@"A problem occured %@", [error description]);	                                 
+            };	
+                    
             // Enumerate Albums
-            [self.library enumerateGroupsWithTypes : ALAssetsGroupAll
-            usingBlock : assetGroupEnumerator
-            failureBlock : assetGroupEnumberatorFailure];
-
+            [self.library enumerateGroupsWithTypes:ALAssetsGroupAll
+                                   usingBlock:assetGroupEnumerator 
+                                 failureBlock:assetGroupEnumberatorFailure];
+        
         }
-    });
+    });    
 }
 
--(void) reloadTableView {
-    [self.tableView reloadData];
-    [self.navigationItem setTitle : @"Selecteer een album"];
+- (void)reloadTableView
+{
+	[self.tableView reloadData];
+	[self.navigationItem setTitle:@"Select an Album"];
 }
 
--(BOOL) shouldSelectAsset : (ELCAsset *) asset previousCount : (NSUInteger) previousCount {
-    return [self.parent shouldSelectAsset : asset previousCount : previousCount];
+- (BOOL)shouldSelectAsset:(ELCAsset *)asset previousCount:(NSUInteger)previousCount
+{
+    return [self.parent shouldSelectAsset:asset previousCount:previousCount];
 }
 
--(void) selectedAssets : (NSArray*) assets {
-    [_parent selectedAssets : assets];
+- (void)selectedAssets:(NSArray*)assets
+{
+	[_parent selectedAssets:assets];
 }
 
 #pragma mark -
 #pragma mark Table view data source
 
--(NSInteger) numberOfSectionsInTableView : (UITableView *) tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     // Return the number of sections.
     return 1;
 }
 
--(NSInteger) tableView : (UITableView *) tableView numberOfRowsInSection : (NSInteger) section {
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     // Return the number of rows in the section.
     return [self.assetGroups count];
 }
 
 
 // Customize the appearance of table view cells.
-
--(UITableViewCell *) tableView : (UITableView *) tableView cellForRowAtIndexPath : (NSIndexPath *) indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier = @"Cell";
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier : CellIdentifier];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle : UITableViewCellStyleDefault reuseIdentifier : CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-
+    
     // Get count
-    ALAssetsGroup *g = (ALAssetsGroup*)[self.assetGroups objectAtIndex : indexPath.row];
-    [g setAssetsFilter : [ALAssetsFilter allPhotos]];
+    ALAssetsGroup *g = (ALAssetsGroup*)[self.assetGroups objectAtIndex:indexPath.row];
+    [g setAssetsFilter:[ALAssetsFilter allPhotos]];
     NSInteger gCount = [g numberOfAssets];
-
-    cell.textLabel.text = [NSString stringWithFormat : @"%@ (%ld)", [g valueForProperty : ALAssetsGroupPropertyName], (long) gCount];
-    [cell.imageView setImage : [UIImage imageWithCGImage : [(ALAssetsGroup*)[self.assetGroups objectAtIndex : indexPath.row] posterImage]]];
-    [cell setAccessoryType : UITableViewCellAccessoryDisclosureIndicator];
-
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ (%ld)",[g valueForProperty:ALAssetsGroupPropertyName], (long)gCount];
+    [cell.imageView setImage:[UIImage imageWithCGImage:[(ALAssetsGroup*)[self.assetGroups objectAtIndex:indexPath.row] posterImage]]];
+	[cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+	
     return cell;
 }
 
 #pragma mark -
 #pragma mark Table view delegate
 
--(void) tableView : (UITableView *) tableView didSelectRowAtIndexPath : (NSIndexPath *) indexPath {
-    ELCAssetTablePicker *picker = [[ELCAssetTablePicker alloc] initWithNibName : nil bundle : nil];
-    picker.parent = self;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	ELCAssetTablePicker *picker = [[ELCAssetTablePicker alloc] initWithNibName: nil bundle: nil];
+	picker.parent = self;
 
-    picker.assetGroup = [self.assetGroups objectAtIndex : indexPath.row];
-    [picker.assetGroup setAssetsFilter : [ALAssetsFilter allPhotos]];
-
-    picker.assetPickerFilterDelegate = self.assetPickerFilterDelegate;
-    picker.immediateReturn = self.immediateReturn;
-    picker.singleSelection = self.singleSelection;
-    picker.minimumimages = self.minimumimages;
-
-    UIBarButtonItem *newBackButton =
-            [[UIBarButtonItem alloc] initWithTitle : @"Terug"
-            style : UIBarButtonItemStyleBordered
-            target : nil
-            action : nil];
-    [[self navigationItem] setBackBarButtonItem : newBackButton];
-
-    [self.navigationController pushViewController : picker animated : YES];
+    picker.assetGroup = [self.assetGroups objectAtIndex:indexPath.row];
+    [picker.assetGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
+    
+	picker.assetPickerFilterDelegate = self.assetPickerFilterDelegate;
+	picker.immediateReturn = self.immediateReturn;
+   picker.singleSelection = self.singleSelection;
+	
+	[self.navigationController pushViewController:picker animated:YES];
 }
 
--(CGFloat) tableView : (UITableView *) tableView heightForRowAtIndexPath : (NSIndexPath *) indexPath {
-    return 57;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return 57;
 }
 
 @end

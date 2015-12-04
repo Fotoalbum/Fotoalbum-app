@@ -24,12 +24,8 @@
     self = [super initWithRootViewController:albumPicker];
     if (self) {
         self.maximumImagesCount = 4;
-        self.numImagesCount = 0;
         [albumPicker setParent:self];
     }
-    
-    albumPicker.minimumimages = self.minimumImagesCount;
-    
     return self;
 }
 
@@ -38,7 +34,6 @@
     self = [super initWithRootViewController:rootViewController];
     if (self) {
         self.maximumImagesCount = 4;
-        self.numImagesCount = 0;
     }
     return self;
 }
@@ -54,15 +49,14 @@
 {
     BOOL shouldSelect = previousCount < self.maximumImagesCount;
     if (!shouldSelect) {
-        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Maximaal %d foto's.", nil), self.maximumImagesCount];
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Je kunt per keer maximaal %d foto's selecteren.", nil), self.maximumImagesCount];
+        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Maximum %d photos.", nil), self.maximumImagesCount];
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"You can only select %d photos at a time.", nil), self.maximumImagesCount];
         [[[UIAlertView alloc] initWithTitle:title
                                     message:message
                                    delegate:nil
                           cancelButtonTitle:nil
-                          otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+                          otherButtonTitles:NSLocalizedString(@"Okay", nil), nil] show];
     }
-
     return shouldSelect;
 }
 

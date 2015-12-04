@@ -15,7 +15,6 @@
 @property (nonatomic, weak) id<ELCAssetSelectionDelegate> parent;
 @property (nonatomic, strong) NSMutableArray *assetGroups;
 @property (nonatomic, assign) BOOL singleSelection;
-@property (nonatomic, assign) int minimumimages;
 @property (nonatomic, assign) BOOL immediateReturn;
 
 // optional, can be used to filter the assets displayed

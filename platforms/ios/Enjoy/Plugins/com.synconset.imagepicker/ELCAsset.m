@@ -25,7 +25,7 @@
 - (void)toggleSelection
 {
     self.selected = !self.selected;
- }
+}
 
 - (void)setSelected:(BOOL)selected
 {
@@ -42,11 +42,6 @@
             [_parent assetSelected:self];
         }
     }
-    
-    if (_parent != nil) {
-        [_parent setNumPhotos:self];
-    }
-    
 }
 
 

@@ -1,0 +1,78 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.synconset.imagepicker": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "net.yoik.cordova.plugins.screenorientation": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.battery-status": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.contacts": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.device-motion": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.device-orientation": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.file-transfer": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.geolocation": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.globalization": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.inappbrowser": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.media": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.media-capture": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.splashscreen": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.statusbar": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.apache.cordova.vibration": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        },
+        "org.chromium.zip": {
+            "PACKAGE_NAME": "nl.fotoalbum.Enjoy"
+        }
+    },
+    "dependent_plugins": {}
+}

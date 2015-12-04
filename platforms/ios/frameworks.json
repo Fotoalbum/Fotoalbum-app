@@ -1,0 +1,6 @@
+{
+    "ImageIO.framework": 1,
+    "SystemConfiguration.framework": 1,
+    "AudioToolbox.framework": 2,
+    "libz.dylib": 1
+}

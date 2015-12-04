@@ -63,27 +63,21 @@
     <key>LSRequiresIPhoneOS</key>
     <true/>
     <key>NSMainNibFile</key>
-    <string></string>
+    <string/>
     <key>NSMainNibFile~ipad</key>
-    <string></string>
-    <key>UISupportedInterfaceOrientations</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-    </array>
-    <key>UISupportedInterfaceOrientations~ipad</key>
-    <array>
-      <string>UIInterfaceOrientationPortrait</string>
-      <string>UIInterfaceOrientationLandscapeLeft</string>
-      <string>UIInterfaceOrientationPortraitUpsideDown</string>
-      <string>UIInterfaceOrientationLandscapeRight</string>
-    </array>
+    <string/>
     <key>CFBundleShortVersionString</key>
     <string>1.0.0</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string></string>
     <key>UIStatusBarHidden</key>
     <true/>
     <key>UIViewControllerBasedStatusBarAppearance</key>
     <false/>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string/>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+      <key>NSAllowsArbitraryLoads</key>
+      <true/>
+    </dict>
   </dict>
 </plist>
